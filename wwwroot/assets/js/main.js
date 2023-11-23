@@ -252,30 +252,25 @@
 
 })()
 /*Weather API*/
-/*https://openweathermap.org/current*/
+//https://openweathermap.org/current
 
-returnWeather = () => {
-    let userZip = document.getElementById('userZip').value
+$('#weatherBtn').on('click', function () {
+    var apiKey = 'f65be74d414bcceb8bee096a07ae99d9'
 
-    console.log(userZip)
+    var zip = document.getElementById('zip').value
 
-    $('#weatherBtn').on('click', function () {
-        var apiKey = 'f65be74d414bcceb8bee096a07ae99d9'
+    console.log(zip)
 
-        var zip = document.getElementById('zip').value
+    $.ajax({
+        url: `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${apiKey}&units=imperial`,
+        method: 'GET',
+        dataType: 'jsonp',
+        success: function (data) {
+            console.log(data)
 
-        console.log(zip)
+            var output = document.getElementById('weatherOutput')
 
-        $.ajax({
-            url: `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${f65be74d414bcceb8bee096a07ae99d9}&units=imperial`,
-            method: 'GET',
-            dataType: 'jsonp',
-            success: function (data) {
-                console.log(data)
-
-                var output = document.getElementById('weatherOutput')
-
-                output.innerHTML += `<div class="col-lg-12 p-3">
+            output.innerHTML += `<div class="col-lg-12 p-3">
                                 <div class="text-center"> 
                                     <h3>Weather - ${data.name}</h3>
                                     <p>${data.weather.map((x) => x.description)}</p>
@@ -284,8 +279,6 @@ returnWeather = () => {
                                     <p>Max Temp: ${data.main.temp_max}&deg;F</p>
                                 </div>
                             </div>`
-            },
-        })
+        },
     })
-
-}
+})

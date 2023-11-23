@@ -20,7 +20,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../../assets/img/updatedbg.png") top right no-repeat;
+  background: #040404 url("../../assets/img/finalforreal.png") top right no-repeat;
   background-size: cover;
  
   left: 0;
@@ -1093,6 +1093,11 @@ section .container {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.section#contact {
+    opacity: 1;
+    bottom: unset;
+} 
+
 .contact .info-box {
   color: #444444;
   padding: 20px;
@@ -1250,6 +1255,10 @@ section .container {
 /*--------------------------------------------------------------
 # Credits
 --------------------------------------------------------------*/
+.footer {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 .credits {
   position: fixed;
   right: 0;
@@ -1280,9 +1289,13 @@ section .container {
 }
 
 
-/--------------------------------------------------------------
+/*--------------------------------------------------------------
 Weather API
---------------------------------------------------------------/
+--------------------------------------------------------------*/
+#weatherBtn {
+    background-color: #00AFB8;
+    color:white;
+}
 
 #weather {
     background-color: rgba(242, 223, 216, 1);
