@@ -85,6 +85,20 @@ namespace pers1102.Controllers
             return View();
         }
 
+        public IActionResult _DetailsDungeonPartial()
+        {
+            return PartialView(_DetailsDungeonPartial);
+        }
+
+        public IActionResult _DetailsStoreFrontPartial()
+        {
+            return PartialView(_DetailsStoreFrontPartial);
+        }
+        public IActionResult _DetailsTodoPartial()
+        {
+            return PartialView(_DetailsTodoPartial);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
